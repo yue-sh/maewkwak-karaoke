@@ -1,4 +1,3 @@
-import { isDevelopment } from '@karaoke/core'
 import { Prisma as PrismaTypes, PrismaClient } from '../generated/client'
 import { INestApplication, Injectable, OnModuleInit } from '@nestjs/common'
 
