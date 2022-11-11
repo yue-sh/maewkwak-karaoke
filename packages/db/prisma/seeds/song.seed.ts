@@ -1,5 +1,7 @@
 import fs from 'fs'
 import Typesense from 'typesense'
+import Kuroshiro from 'kuroshiro'
+import KuromojiAnalyzer from 'kuroshiro-analyzer-kuromoji'
 import {
   TYPESENSE_HOST,
   TYPESENSE_PORT,
@@ -10,6 +12,8 @@ import {
 import { PrismaClient } from '../../generated/client'
 
 export async function seedSongs(db: PrismaClient): Promise<void> {
+  const kuroshiro = new Kuroshiro()
+  await kuroshiro.init(new KuromojiAnalyzer())
   const typesenseClient = new Typesense.Client({
     nodes: [
       {
@@ -26,7 +30,9 @@ export async function seedSongs(db: PrismaClient): Promise<void> {
     fields: [
       { name: 'songId', type: 'string' },
       { name: 'title', type: 'string', facet: true },
-      { name: 'artist', type: 'string', facet: true }
+      { name: 'artist', type: 'string', facet: true },
+      { name: 'romanji', type: 'string', facet: true },
+      { name: 'alias', type: 'string', facet: true }
     ]
   }
   try {
@@ -46,11 +52,18 @@ export async function seedSongs(db: PrismaClient): Promise<void> {
   let now = 0
   //! OPTIMIZE PLS uwu
   for (const song of data) {
+    const romanji = await kuroshiro.convert(song.name, {
+      to: 'romaji'
+    })
+    //? Index default without alias
     await typesenseClient.collections('songs').documents().create({
       songId: song.numb,
       title: song.name,
-      artist: song.star
+      artist: song.star,
+      romanji,
+      alias: ''
     })
+    //? Index
     await db.song.create({
       data: {
         songId: song.numb,
