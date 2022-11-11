@@ -6,7 +6,7 @@ volumes:
 
 services:
   db:
-    container_name: controller-database
+    container_name: karaoke-database
     image: postgres:15-alpine
     restart: unless-stopped
     ports:
