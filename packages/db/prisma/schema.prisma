@@ -13,10 +13,10 @@ generator client {
 // main
 
 model Song {
-  id     String @id @default(uuid())
+  id     String @id @default(cuid())
+  songId String
   title  String
   artist String
-  songId String
 
   @@index([title, artist])
   @@map("songs")

@@ -50,5 +50,12 @@ export async function seedSongs(db: PrismaClient): Promise<void> {
       title: song.name,
       artist: song.star
     })
+    await db.song.create({
+      data: {
+        songId: song.numb,
+        title: song.name,
+        artist: song.star
+      }
+    })
   }
 }
