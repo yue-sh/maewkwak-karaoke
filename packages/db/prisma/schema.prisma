@@ -1,0 +1,17 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("CONTROLLER_DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
+  binaryTargets   = ["native", "rhel-openssl-1.1.x", "linux-arm64-openssl-1.1.x"]
+  output          = "../generated/client"
+}
+
+// main
+
+model User {
+  id String @id @default(uuid())
+}

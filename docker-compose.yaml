@@ -1,0 +1,20 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+
+
+services:
+  db:
+    container_name: controller-database
+    image: postgres:15-alpine
+    restart: unless-stopped
+    ports:
+      - ${DATABASE_PORT:-5432}:5432
+    environment:
+      - POSTGRES_HOST=${DATABASE_HOST}
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
