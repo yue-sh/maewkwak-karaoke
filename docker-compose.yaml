@@ -31,3 +31,9 @@ services:
       - ${TYPESENSE_PORT:-8108}:8108
     volumes:
       - typesense_data:/mnt/typesense/data
+
+  typesense-dashboard:
+    container_name: karaoke-typesense-dashboard
+    image: funxtionatics/typesense-dashboard:1.2.0
+    ports:
+      - 8109:80

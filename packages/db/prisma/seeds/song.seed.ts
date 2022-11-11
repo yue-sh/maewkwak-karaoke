@@ -42,7 +42,8 @@ export async function seedSongs(db: PrismaClient): Promise<void> {
     throw new Error('No data file founded')
   }
   const rawData = fs.readFileSync('./prisma/seeds/data/data.json', 'utf-8')
-  const { data } = JSON.parse(rawData)
+  const { total, data } = JSON.parse(rawData)
+  let now = 0
   //! OPTIMIZE PLS uwu
   for (const song of data) {
     await typesenseClient.collections('songs').documents().create({
@@ -57,5 +58,6 @@ export async function seedSongs(db: PrismaClient): Promise<void> {
         artist: song.star
       }
     })
+    console.log(`Indexing ${now++} of ${total} songs`)
   }
 }
