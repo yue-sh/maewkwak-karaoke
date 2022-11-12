@@ -21,6 +21,9 @@
 		"strictNullChecks": false,
 		"forceConsistentCasingInFileNames": true
 	},
+	"ts-node": {
+		"swc": true
+	},
 	"include": [
 		"src/**/*.ts"
 	],

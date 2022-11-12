@@ -11,12 +11,12 @@ generator client {
 }
 
 model Song {
-  id      String @id @default(cuid())
+  id      String   @id @default(cuid())
   songId  String
   title   String
   artist  String
   romanji String
-  alias   String
+  alias   String[]
 
   @@index([title, artist, romanji, alias])
   @@map("songs")

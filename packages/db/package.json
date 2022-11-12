@@ -19,9 +19,10 @@
 		"@karaoke/core": "workspace:*",
 		"@nestjs/common": "9.1.6",
 		"@prisma/client": "4.6.1",
-		"cwait": "^1.1.2",
+		"cluster": "^0.7.7",
 		"kuroshiro": "^1.2.0",
 		"kuroshiro-analyzer-kuromoji": "^1.1.0",
+		"os": "^0.1.2",
 		"typesense": "1.4.2"
 	},
 	"devDependencies": {

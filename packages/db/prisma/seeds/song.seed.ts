@@ -1,8 +1,6 @@
 import fs from 'fs'
 import Typesense from 'typesense'
-import Kuroshiro from 'kuroshiro'
-import KuromojiAnalyzer from 'kuroshiro-analyzer-kuromoji'
-import { TaskQueue } from 'cwait'
+import childProcess from 'child_process'
 import {
   TYPESENSE_HOST,
   TYPESENSE_PORT,
@@ -10,24 +8,8 @@ import {
   TYPESENSE_PROTOCOL,
   TYPESENSE_TIMEOUT
 } from '@karaoke/core'
-import { PrismaClient } from '../../generated/client'
 
-interface Song {
-  name: string
-  star: string
-  numb: string
-}
-
-interface RawSongData {
-  total: number
-  data: Song[]
-}
-
-const dbQueue = new TaskQueue(Promise as any, 128)
-
-export async function seedSongs(db: PrismaClient): Promise<void> {
-  const kuroshiro = new Kuroshiro()
-  await kuroshiro.init(new KuromojiAnalyzer())
+export async function seedSongs(): Promise<void> {
   const typesenseClient = new Typesense.Client({
     nodes: [
       {
@@ -61,34 +43,8 @@ export async function seedSongs(db: PrismaClient): Promise<void> {
   if (numFiles == 0) {
     throw new Error('No data file founded')
   }
-  const rawData = fs.readFileSync('./prisma/seeds/data/data.json', 'utf-8')
-  const { total, data }: RawSongData = JSON.parse(rawData)
-  //! OPTIMIZE PLS uwu
 
-  await Promise.allSettled(
-    data.map(
-      dbQueue.wrap<void, Song>(async (song) => {
-        const romanji = await kuroshiro.convert(song.name, {
-          to: 'romaji'
-        })
-        //? Index default without alias
-        await typesenseClient.collections('songs').documents().create({
-          songId: song.numb,
-          title: song.name,
-          artist: song.star,
-          romanji,
-          alias: ''
-        })
-        await db.song.create({
-          data: {
-            songId: song.numb,
-            title: song.name,
-            artist: song.star,
-            romanji,
-            alias: ''
-          }
-        })
-      })
-    )
-  )
+  childProcess.execSync('ts-node ./prisma/seeds/songdata.seed.ts', {
+    stdio: 'inherit'
+  })
 }
