@@ -66,22 +66,22 @@ if (isPrimary) {
       if (!song) {
         continue
       }
-
-      const romanji = await kuroshiro.convert(song.name, {
-        to: 'romaji'
-      })
+      let romanji = ''
+      const isJapan = Kuroshiro.Util.isJapanese(song.name)
+      if (isJapan) {
+        romanji = await kuroshiro.convert(song.name, {
+          to: 'romaji'
+        })
+      }
 
       await Promise.allSettled([
-        typesenseClient
-          .collections('songs')
-          .documents()
-          .create({
-            songId: song.numb,
-            title: song.name,
-            artist: song.star,
-            romanji,
-            alias: JSON.stringify([])
-          }),
+        typesenseClient.collections('songs').documents().create({
+          songId: song.numb,
+          title: song.name,
+          artist: song.star,
+          romanji,
+          alias: ''
+        }),
         db.song.create({
           data: {
             songId: song.numb,

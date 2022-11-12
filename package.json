@@ -22,7 +22,7 @@
 		"start:server": "dotenv -- turbo run start --filter=\"./apps/server\"",
 		"db:push": "dotenv -- prisma db push --schema ./packages/db/prisma/schema.prisma --accept-data-loss",
 		"db:seed": "dotenv -- turbo run db:seed",
-		"db:studio": "dotenv -- turbo run db:studio",
+		"db:studio": "dotenv -- prisma studio --schema ./packages/db/prisma/schema.prisma",
 		"db:generate": "dotenv -- prisma generate --schema ./packages/db/prisma/schema.prisma",
 		"db:migrate:dev": "dotenv -- prisma migrate dev --schema ./packages/db/prisma/schema.prisma",
 		"db:migrate:reset": "dotenv -- prisma migrate reset --schema ./packages/db/prisma/schema.prisma",
