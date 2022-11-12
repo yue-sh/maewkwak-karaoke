@@ -43,8 +43,9 @@ let counter = 0
 if (isPrimary) {
   for (let i = 0; i < available; i++) {
     const worker = fork()
-    worker.on('message', (msg) => {
+    worker.on('message', () => {
       counter++
+      console.log(`${counter}/${available} finished`)
       if (counter == available) {
         process.exit(0)
       }
@@ -66,7 +67,7 @@ if (isPrimary) {
         continue
       }
 
-      const romanji = await kuroshiro.convert(song.name || '', {
+      const romanji = await kuroshiro.convert(song.name, {
         to: 'romaji'
       })
 
@@ -75,9 +76,9 @@ if (isPrimary) {
           .collections('songs')
           .documents()
           .create({
-            songId: song.numb || '',
-            title: song.name || '',
-            artist: song.star || '',
+            songId: song.numb,
+            title: song.name,
+            artist: song.star,
             romanji,
             alias: JSON.stringify([])
           }),

@@ -10,7 +10,7 @@ const db = new PrismaClient()
     await db.$disconnect()
   })
 
-  console.log('\n\n 🗣️ Seeding songs... \n\n')
+  console.log('\n\n Seeding songs... \n\n')
   await seedSongs().then(async () => {
     await db.$disconnect()
   })
