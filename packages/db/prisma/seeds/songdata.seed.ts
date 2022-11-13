@@ -37,7 +37,7 @@ const typesenseClient = new Typesense.Client({
   connectionTimeoutSeconds: +TYPESENSE_TIMEOUT
 })
 
-const data = (rawData as any).data
+const { data } = rawData as any
 
 let counter = 0
 if (isPrimary) {
@@ -52,10 +52,8 @@ if (isPrimary) {
     })
   }
 } else {
-  // eslint-disable-next-line @typescript-eslint/no-extra-semi
   ;(async () => {
     await kuroshiro.init(new KuromojiAnalyzer())
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     let { start, end } = batch(data.length, cluster.worker!.id)
     start -= 1
     end -= 1
@@ -92,8 +90,6 @@ if (isPrimary) {
         })
       ])
     }
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    process.send(1)
+    ;(process as any).send(1)
   })()
 }
