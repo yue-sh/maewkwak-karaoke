@@ -1,5 +1,6 @@
-import { Resolver, Query, Mutation } from '@nestjs/graphql'
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql'
 import { SongService } from './song.service'
+import { Song } from './graphql/song.schema'
 
 @Resolver()
 export class SongResolver {
@@ -8,5 +9,10 @@ export class SongResolver {
   @Query(() => String)
   hello(): string {
     return 'world'
+  }
+
+  @Query(() => [Song])
+  async searchSongs(@Args('name') name: string) {
+    return this.service.searchSongs(name)
   }
 }
