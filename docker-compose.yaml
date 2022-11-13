@@ -22,7 +22,7 @@ services:
 
   typesense:
     container_name: karaoke-typesense
-    image: typesense/typesense:0.24.0.rcn31
+    image: typesense/typesense:0.24.0.rcn8
     restart: unless-stopped
     environment:
       - TYPESENSE_API_KEY=xyz
