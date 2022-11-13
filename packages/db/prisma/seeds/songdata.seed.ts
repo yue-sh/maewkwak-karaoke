@@ -21,7 +21,7 @@ function batch(total: number, batch: number) {
   return { start, end }
 }
 
-const available = cpus().length - 2
+const available = cpus().length - 1
 const kuroshiro = new Kuroshiro()
 const { isPrimary, fork } = cluster
 
