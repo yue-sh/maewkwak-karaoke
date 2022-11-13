@@ -12,7 +12,7 @@ importers:
       dotenv: 16.0.3
       dotenv-cli: 6.0.0
       eslint: 8.26.0
-      eslint-config-next: 13.0.2
+      eslint-config-next: 13.0.3
       eslint-config-prettier: 8.5.0
       nodemon: ^2.0.20
       prettier: 2.7.1
@@ -32,7 +32,7 @@ importers:
       '@typescript-eslint/parser': 5.42.1_wyqvi574yv7oiwfeinomdzmc3m
       concurrently: 7.5.0
       eslint: 8.26.0
-      eslint-config-next: 13.0.2_wyqvi574yv7oiwfeinomdzmc3m
+      eslint-config-next: 13.0.3_wyqvi574yv7oiwfeinomdzmc3m
       eslint-config-prettier: 8.5.0_eslint@8.26.0
       nodemon: 2.0.20
       prettier: 2.7.1
@@ -750,8 +750,8 @@ packages:
       - chokidar
     dev: true
 
-  /@next/eslint-plugin-next/13.0.2:
-    resolution: {integrity: sha512-W+fIIIaFU7Kct7Okx91C7XDRGolv/w2RUenX2yZFeeNVcuVzDIKUcNmckrYbYcwrNQUSXmtwrs3g8xwast0YtA==}
+  /@next/eslint-plugin-next/13.0.3:
+    resolution: {integrity: sha512-slmTAHNKDyc7jhx4VF8lFbmOPWJ3PShtUUWpb6x9+ga59CyOxgP6AdcDhxfapnWYACKe/TwYiaveufu7LqXgZg==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -2060,8 +2060,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-next/13.0.2_wyqvi574yv7oiwfeinomdzmc3m:
-    resolution: {integrity: sha512-SrrHp+zBDYLjOFZdM5b9aW/pliK687Xxfa+qpDuL08Z04ReHhmz3L+maXaAqgrEVZHQximP7nh0El4yNDJW+CA==}
+  /eslint-config-next/13.0.3_wyqvi574yv7oiwfeinomdzmc3m:
+    resolution: {integrity: sha512-i2JoQP8gGv303GjXTonA27fm1ckRRkRoAP1WYEQgN0D2DDoFeBPqlJgHlMHnXKWjmNct/sW8jQEvy9am2juc8g==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -2069,7 +2069,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 13.0.2
+      '@next/eslint-plugin-next': 13.0.3
       '@rushstack/eslint-patch': 1.2.0
       '@typescript-eslint/parser': 5.42.1_wyqvi574yv7oiwfeinomdzmc3m
       eslint: 8.26.0
