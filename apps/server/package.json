@@ -4,8 +4,7 @@
 	"scripts": {
 		"dev": "nest start --watch",
 		"build": "rimraf dist && nest build --webpack",
-		"start": "nest start",
-		"start:prod": "node dist/main"
+		"start": "nest start"
 	},
 	"dependencies": {
 		"@babel/runtime": "7.19.4",

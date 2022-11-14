@@ -16,9 +16,6 @@
 		"start": {
 			"cache": false
 		},
-		"start:prod": {
-			"cache": false
-		},
 		"db:seed": {
 			"cache": false
 		},

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Main', sans-serif;
+  @apply bg-gray-300;
+}
+
+.cta-box:hover > .on-hover {
+  @apply opacity-100 -translate-y-2 shadow-sm;
+}

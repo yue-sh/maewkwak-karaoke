@@ -17,7 +17,6 @@
 		"build:server": "dotenv -- turbo run build --filter=\"./apps/server\"",
 		"build:package": "dotenv -- turbo run build --filter=\"./packages/*\"",
 		"start": "dotenv -- turbo run start",
-		"start:prod": "dotenv -- turbo run start:prod",
 		"start:client": "dotenv -- turbo run start --filter=\"./apps/client\"",
 		"start:server": "dotenv -- turbo run start --filter=\"./apps/server\"",
 		"db:push": "dotenv -- prisma db push --schema ./packages/db/prisma/schema.prisma --accept-data-loss",

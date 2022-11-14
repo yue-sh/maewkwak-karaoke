@@ -1,0 +1,32 @@
+{
+	"name": "client",
+	"version": "1.0.0",
+	"type": "module",
+	"engines": {
+		"npm": ">=7",
+		"node": ">=16"
+	},
+	"scripts": {
+		"dev": "solid-start dev",
+		"build": "solid-start build",
+		"start": "solid-start start"
+	},
+	"dependencies": {
+		"@solidjs/meta": "^0.28.0",
+		"@solidjs/router": "^0.5.0",
+		"solid-icons": "^1.0.4",
+		"solid-js": "^1.6.0",
+		"solid-start": "^0.2.0",
+		"undici": "^5.11.0"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.12",
+		"postcss": "^8.4.18",
+		"solid-start-node": "^0.2.0",
+		"tailwindcss": "^3.2.0",
+		"typescript": "^4.8.4",
+		"vite": "^3.1.8",
+		"vite-plugin-html": "^3.2.0",
+		"vite-plugin-obfuscator": "^1.0.5"
+	}
+}
