@@ -25,10 +25,10 @@ export async function seedSongs(): Promise<void> {
     name: 'songs',
     fields: [
       { name: 'songId', type: 'string' },
-      { name: 'title', type: 'string' },
-      { name: 'artist', type: 'string' },
-      { name: 'romanji', type: 'string', optional: true },
-      { name: 'alias', type: 'string' }
+      { name: 'title', type: 'string', facet: true },
+      { name: 'artist', type: 'string', facet: true },
+      { name: 'romanji', type: 'string', factet: true, optional: true },
+      { name: 'alias', type: 'string', facet: true }
     ]
   }
   try {
