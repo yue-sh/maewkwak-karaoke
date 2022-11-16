@@ -1,16 +1,10 @@
 import { cpus } from 'os'
 import cluster from 'cluster'
 import Kuroshiro from 'kuroshiro'
-import Typesense from 'typesense'
 import KuromojiAnalyzer from 'kuroshiro-analyzer-kuromoji'
-import {
-  TYPESENSE_HOST,
-  TYPESENSE_PORT,
-  TYPESENSE_API_KEY,
-  TYPESENSE_PROTOCOL,
-  TYPESENSE_TIMEOUT
-} from '@karaoke/core'
+
 import rawData from './data/data.json'
+import { typesenseClient } from './utils'
 import { PrismaClient } from '../../generated/client'
 
 const db = new PrismaClient()
@@ -24,18 +18,6 @@ function batch(total: number, batch: number) {
 const available = cpus().length - 1
 const kuroshiro = new Kuroshiro()
 const { isPrimary, fork } = cluster
-
-const typesenseClient = new Typesense.Client({
-  nodes: [
-    {
-      host: TYPESENSE_HOST,
-      port: +TYPESENSE_PORT,
-      protocol: TYPESENSE_PROTOCOL
-    }
-  ],
-  apiKey: TYPESENSE_API_KEY,
-  connectionTimeoutSeconds: +TYPESENSE_TIMEOUT
-})
 
 const { data } = rawData as any
 
