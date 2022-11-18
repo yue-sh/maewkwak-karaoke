@@ -16,7 +16,7 @@ export default function Home() {
     <MobileLayout>
       <div class="space-y- p-4">
         <div class="grid grid-cols-2 gap-2">
-          <div class="col-span-2 mb-2 flex gap-4 justify-center items-center">
+          <div class="col-span-2 mb-2 flex gap-4 justify-center items-center pt-4">
             🎉
             <h1 class="text-xl text-gray-600">
               ยินดีต้อนรับสู่ <b>Manekineko</b>
@@ -41,7 +41,7 @@ export default function Home() {
             boxClass="bg-green-500 hover:bg-green-600"
             icon={<BiSolidPlaylist size={48} />}
           />
-          <div class="col-span-2">
+          {/* <div class="col-span-2">
             <p class="text-gray-500 mt-4 mb-2">เพลงยอดนิยม</p>
             <div class="space-y-2">
               <SongItem />
@@ -50,7 +50,7 @@ export default function Home() {
               <SongItem />
               <SongItem />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </MobileLayout>
