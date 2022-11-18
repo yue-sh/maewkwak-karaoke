@@ -1,26 +1,8 @@
 import fs from 'fs'
-import Typesense from 'typesense'
+import { typesenseClient } from './utils'
 import childProcess from 'child_process'
-import {
-  TYPESENSE_HOST,
-  TYPESENSE_PORT,
-  TYPESENSE_API_KEY,
-  TYPESENSE_PROTOCOL,
-  TYPESENSE_TIMEOUT
-} from '@karaoke/core'
 
 export async function seedSongs(): Promise<void> {
-  const typesenseClient = new Typesense.Client({
-    nodes: [
-      {
-        host: TYPESENSE_HOST,
-        port: +TYPESENSE_PORT,
-        protocol: TYPESENSE_PROTOCOL
-      }
-    ],
-    apiKey: TYPESENSE_API_KEY,
-    connectionTimeoutSeconds: +TYPESENSE_TIMEOUT
-  })
   const songSchema = {
     name: 'songs',
     fields: [
