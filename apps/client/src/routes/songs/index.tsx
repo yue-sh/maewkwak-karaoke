@@ -41,16 +41,14 @@ export default function Songs() {
         searchClient,
         indexName: 'songs'
       })
-  
+
       const renderHits = connectHits(({ hits, widgetParams }) => {
         const container = document.querySelector(widgetParams.container)
         container.replaceChildren()
         render(
           () => (
             <div class="space-y-2">
-              {search.status == 'stalled' && (
-                <>Loading</>
-              )}
+              {search.status == 'stalled' && <>Loading</>}
               {hits.map((hit) => (
                 <SongItem
                   id={hit.songId}
@@ -66,7 +64,7 @@ export default function Songs() {
           container
         )
       })
-  
+
       search.addWidgets([
         searchBox({
           container: '#searchbox',
@@ -96,16 +94,10 @@ export default function Songs() {
     // fetch to manekineko lan server
     fetch(getPayloadURL('addsong', songId), {
       method: 'POST'
-    }).then((response) => {
-      toast(`เพิ่มเพลง ${songName} สำเร็จ`, {
-        duration: 500,
-        position: 'bottom-center',
-      });
-    }).catch((error) => {
-      toast.error(`เกิดปัญหาในการเพิ่มเพลง ${songName}`, {
-        duration: 1000,
-        position: 'bottom-center',
-      });
+    })
+    toast(`เพิ่มเพลง ${songName} สำเร็จ`, {
+      duration: 500,
+      position: 'bottom-center'
     })
   }
 
