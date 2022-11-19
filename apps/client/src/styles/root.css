@@ -4,7 +4,6 @@
 
 html {
   font-family: 'Main', sans-serif;
-  @apply bg-gray-300;
 }
 
 .cta-box:hover > .on-hover {

@@ -35,7 +35,7 @@ export const MobileLayout = ({ children }) => {
   }, [])
 
   return (
-    <div class="flex h-screen overflow-hidden bg-gray-50 max-w-md mx-auto">
+    <div class="flex max-w-md mx-auto">
       {payload() ? (
         <div class="relative flex flex-col flex-1 w-0 overflow-hidden">
           <main class="relative z-0 flex-1 overflow-y-auto transition-all transform-gpu focus:outline-none">
