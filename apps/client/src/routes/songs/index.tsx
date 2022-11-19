@@ -53,7 +53,7 @@ export default function Songs() {
               )}
               {hits.map((hit) => (
                 <SongItem
-                  id={hit.id}
+                  id={hit.songId}
                   title={hit.title}
                   artist={hit.artist}
                   romanji={hit.TRomanji}
