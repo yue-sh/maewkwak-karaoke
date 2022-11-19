@@ -28,7 +28,7 @@ export default function Home() {
       <div class="space-y-6 p-4">
         <div class="flex">
           <Title />
-          <User />
+          <User title={p().mid} />
         </div>
         <div class="block">
           <div class="flex justify-between items-center px-4 sm:px-8 transition-all pt-4">

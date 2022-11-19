@@ -15,7 +15,7 @@ export default function Queue() {
   }
 
   createEffect(() => {
-    setTimeout(() => {
+    setInterval(() => {
       fetch(getPayloadURL('getsong', '0'))
         .then((response) => {
           response.json()
