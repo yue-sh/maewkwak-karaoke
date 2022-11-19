@@ -4,14 +4,13 @@ import { SongItem } from '~/components/SongItem'
 import { MobileLayout } from '~/layouts/MobileLayout'
 
 import instantsearch from 'instantsearch.js'
-import { highlight } from 'instantsearch.js/es/helpers'
 import { searchBox, stats } from 'instantsearch.js/es/widgets'
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter'
 import connectHits from 'instantsearch.js/es/connectors/hits/connectHits'
 import { onMount } from 'solid-js'
 import { render } from 'solid-js/web'
 import payloadStore from '~/store/payload'
-import toast, { Toaster } from 'solid-toast'
+import toast from 'solid-toast'
 
 export default function Songs() {
   const { payload: p, getPayloadURL } = payloadStore
