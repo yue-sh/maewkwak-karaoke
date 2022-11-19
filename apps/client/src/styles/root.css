@@ -10,3 +10,7 @@ html {
 .cta-box:hover > .on-hover {
   @apply opacity-100 -translate-y-2 shadow-sm;
 }
+
+* {
+  touch-action: manipulation;
+}
