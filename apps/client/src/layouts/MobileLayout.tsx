@@ -44,7 +44,7 @@ export const MobileLayout = ({ children }) => {
           <div>
             <Toaster containerClassName='!bottom-[6rem]' />
           </div>
-          <div class="px-2 py-4 grid grid-cols-5 bg-gray-100 z-[99999999] sticky bottom-0">
+          <div class="px-2 py-4 grid grid-cols-5 bg-gray-100 z-[99999999] fixed bottom-0 w-full max-w-md">
             <NavbarItem
               route="/"
               icon={<BiRegularHome size={24} />}
