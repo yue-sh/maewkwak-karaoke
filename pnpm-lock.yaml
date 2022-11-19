@@ -50,9 +50,9 @@ importers:
       postcss: ^8.4.18
       solid-icons: ^1.0.4
       solid-js: ^1.6.0
-      solid-pebble: ^0.1.2
       solid-start: ^0.2.0
       solid-start-node: ^0.2.0
+      solid-toast: ^0.3.5
       tailwindcss: ^3.2.0
       typescript: ^4.8.4
       typesense-instantsearch-adapter: ^2.4.2
@@ -66,8 +66,8 @@ importers:
       instantsearch.js: 4.49.1_algoliasearch@4.14.2
       solid-icons: 1.0.4_solid-js@1.6.2
       solid-js: 1.6.2
-      solid-pebble: 0.1.2_solid-js@1.6.2
       solid-start: 0.2.5_3zrnixj5s2zo7r5ma456ac2ypm
+      solid-toast: 0.3.5_solid-js@1.6.2
       typesense-instantsearch-adapter: 2.4.2_@babel+runtime@7.20.1
       undici: 5.12.0
     devDependencies:
@@ -6988,15 +6988,6 @@ packages:
     dependencies:
       csstype: 3.1.1
 
-  /solid-pebble/0.1.2_solid-js@1.6.2:
-    resolution: {integrity: sha512-7Nvm8AMDUo7UaEsNSYagJ3Tfs8ARpv4a/Y6stq8terIMznvZlvwTms9OrwotUulE/VN7QGPm39ZF+huBx8GYtA==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      solid-js: ^1.4
-    dependencies:
-      solid-js: 1.6.2
-    dev: false
-
   /solid-refresh/0.4.1_solid-js@1.6.2:
     resolution: {integrity: sha512-v3tD/OXQcUyXLrWjPW1dXZyeWwP7/+GQNs8YTL09GBq+5FguA6IejJWUvJDrLIA4M0ho9/5zK2e9n+uy+4488g==}
     peerDependencies:
@@ -7074,6 +7065,14 @@ packages:
       wait-on: 6.0.1_debug@4.3.4
     transitivePeerDependencies:
       - supports-color
+
+  /solid-toast/0.3.5_solid-js@1.6.2:
+    resolution: {integrity: sha512-m4PX2ESex9nSwt9d9XTr3r+Kp3vjSoViDWj3gj6Xxgz21IKYODMKhACXurlZCztz56NQBnfX2m4es4I8JgXGQQ==}
+    peerDependencies:
+      solid-js: ^1.5.4
+    dependencies:
+      solid-js: 1.6.2
+    dev: false
 
   /sonic-boom/3.2.0:
     resolution: {integrity: sha512-SbbZ+Kqj/XIunvIAgUZRlqd6CGQYq71tRRbXR92Za8J/R3Yh4Av+TWENiSiEgnlwckYLyP0YZQWVfyNC0dzLaA==}

@@ -5,15 +5,16 @@ import { MobileLayout } from '~/layouts/MobileLayout'
 
 import instantsearch from 'instantsearch.js'
 import { highlight } from 'instantsearch.js/es/helpers'
-import { searchBox, hits } from 'instantsearch.js/es/widgets'
+import { searchBox, stats } from 'instantsearch.js/es/widgets'
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter'
-import { createEffect, onMount } from 'solid-js'
 import connectHits from 'instantsearch.js/es/connectors/hits/connectHits'
+import { onMount } from 'solid-js'
 import { render } from 'solid-js/web'
-import { usePebble } from 'solid-pebble'
-import { payloadpebble } from '~/pebbles/payload'
+import payloadStore from '~/store/payload'
+import toast, { Toaster } from 'solid-toast'
 
 export default function Songs() {
+  const { payload: p, getPayloadURL } = payloadStore
   const adapter = new TypesenseInstantSearchAdapter({
     server: {
       apiKey: 'xyz',
@@ -36,61 +37,76 @@ export default function Songs() {
   const searchClient = adapter.searchClient
 
   onMount(() => {
-    const search = instantsearch({
-      searchClient,
-      indexName: 'songs'
-    })
-
-    const renderHits = connectHits(({ hits, widgetParams }) => {
-      const container = document.querySelector(widgetParams.container)
-      container.replaceChildren()
-      render(
-        () => (
-          <div class="space-y-2">
-            {hits.map((hit) => (
-              <SongItem
-                id={hit.id}
-                title={highlight({ attribute: 'title', hit })}
-                artist={highlight({ attribute: 'artist', hit })}
-                romanji={highlight({ attribute: 'TRomanji', hit })}
-                artistRomanji={highlight({ attribute: 'ARomanji', hit })}
-                onAdd={addSongToQueue}
-              />
-            ))}
-          </div>
-        ),
-        container
-      )
-    })
-
-    search.addWidgets([
-      searchBox({
-        container: '#searchbox',
-        cssClasses: {
-          input:
-            'py-4 px-6 pl-11 block w-full border-gray-200 text-sm focus:z-10 focus:border-0 focus:ring-0',
-          submit: 'hidden',
-          reset: 'hidden'
-        },
-        placeholder: 'ค้นหาชื่อเพลง หรือ ศิลปิน'
-      }),
-      renderHits({
-        container: '#hits'
+    if (p().ip) {
+      const search = instantsearch({
+        searchClient,
+        indexName: 'songs'
       })
-    ])
-    search.start()
+  
+      const renderHits = connectHits(({ hits, widgetParams }) => {
+        const container = document.querySelector(widgetParams.container)
+        container.replaceChildren()
+        render(
+          () => (
+            <div class="space-y-2">
+              {search.status == 'stalled' && (
+                <>Loading</>
+              )}
+              {hits.map((hit) => (
+                <SongItem
+                  id={hit.id}
+                  title={hit.title}
+                  artist={hit.artist}
+                  romanji={hit.TRomanji}
+                  artistRomanji={hit.ARomanji}
+                  onAdd={addSongToQueue}
+                />
+              ))}
+            </div>
+          ),
+          container
+        )
+      })
+  
+      search.addWidgets([
+        searchBox({
+          container: '#searchbox',
+          cssClasses: {
+            input:
+              'py-4 px-6 pl-11 block w-full border-gray-200 text-sm focus:z-10 focus:border-0 focus:ring-0',
+            submit: 'hidden',
+            reset: 'hidden'
+          },
+          placeholder: 'ค้นหาชื่อเพลง หรือ ศิลปิน'
+        }),
+        stats({
+          container: '#stats',
+          cssClasses: {
+            text: 'text-sm text-gray-500 pb-2'
+          }
+        }),
+        renderHits({
+          container: '#hits'
+        })
+      ])
+      search.start()
+    }
   })
 
-  const addSongToQueue = (songId: string) => {
-    const [p] = usePebble(payloadpebble)
-    console.log(p())
-    const url = `http://10.0.0.1:8080/WeixinSong_En/Udp_SelectSong.php?ip=${
-      p().ip
-    }&port=${p().port}&mac=${p().mac}&mid=${p().mid}&cmd=addsong&text=${songId}`
-    fetch(url, {
+  const addSongToQueue = (songId: string, songName: string) => {
+    // fetch to manekineko lan server
+    fetch(getPayloadURL('addsong', songId), {
       method: 'POST'
     }).then((response) => {
-      console.log('finished')
+      toast(`เพิ่มเพลง ${songName} สำเร็จ`, {
+        duration: 500,
+        position: 'bottom-center',
+      });
+    }).catch((error) => {
+      toast.error(`เกิดปัญหาในการเพิ่มเพลง ${songName}`, {
+        duration: 1000,
+        position: 'bottom-center',
+      });
     })
   }
 
@@ -105,9 +121,7 @@ export default function Songs() {
         </div>
 
         <div class="space-y-1 px-4">
-          <p class="text-sm text-gray-500 pb-2">
-            ผลการค้นหา <b>2 รายการ</b>
-          </p>
+          <div id="stats"></div>
           <div id="hits" />
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { NotImplemented } from '~/components/NotImplemented'
-import { RecordItem } from '~/components/RecordItem'
 import { MobileLayout } from '~/layouts/MobileLayout'
 
 export default function Records() {

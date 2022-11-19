@@ -1,10 +1,11 @@
 export const MenuIconButton = ({
   colorClass = 'bg-gray-200 border-gray-300',
   icon,
-  title
+  title,
+  onClick
 }) => {
   return (
-    <button onClick={() => alert('Triggered')}>
+    <button onClick={() => onClick()}>
       <div
         class={
           'border-0 text-gray-600 transition-all rounded-full flex justify-center items-center aspect-square ' +

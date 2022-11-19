@@ -17,8 +17,8 @@
 		"instantsearch.js": "^4.49.1",
 		"solid-icons": "^1.0.4",
 		"solid-js": "^1.6.0",
-		"solid-pebble": "^0.1.2",
 		"solid-start": "^0.2.0",
+		"solid-toast": "^0.3.5",
 		"typesense-instantsearch-adapter": "^2.4.2",
 		"undici": "^5.11.0"
 	},

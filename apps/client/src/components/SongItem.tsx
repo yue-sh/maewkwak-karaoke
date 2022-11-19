@@ -4,9 +4,10 @@ export const SongItem = ({
   id,
   title,
   artist,
-  romanji,
-  artistRomanji,
-  onAdd,
+  romanji = null,
+  artistRomanji = null,
+  onAdd = null,
+  customAction = null
 }) => {
   return (
     <div class="bg-gray-100 rounded-md p-2 flex items-center gap-3">
@@ -19,9 +20,15 @@ export const SongItem = ({
       </div>
 
       <div class="ml-auto space-x-2">
-        <button class="w-8 h-8 rounded-md text-white bg-blue-500 hover:bg-blue-600 flex justify-center items-center" onClick={() => onAdd(id)}>
-          <BiSolidAddToQueue />
-        </button>
+        {!customAction && (
+          <button
+            class="w-12 h-12 rounded-md text-white bg-blue-500 hover:bg-blue-600 flex justify-center items-center"
+            onClick={() => onAdd(id, title)}
+          >
+            <BiSolidAddToQueue />
+          </button>
+        )}
+        {customAction}
       </div>
     </div>
   )
