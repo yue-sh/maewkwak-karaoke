@@ -8,6 +8,10 @@ import { typesenseClient } from './utils'
 import { PrismaClient } from '../../generated/client'
 
 const db = new PrismaClient()
+const { data } = rawData as any
+const kuroshiro = new Kuroshiro()
+const available = cpus().length - 1
+const { isPrimary, fork } = cluster
 
 function batch(total: number, batch: number) {
   const start = Math.floor(((batch - 1) * total) / available + 1)
@@ -15,20 +19,15 @@ function batch(total: number, batch: number) {
   return { start, end }
 }
 
-const available = cpus().length - 1
-const kuroshiro = new Kuroshiro()
-const { isPrimary, fork } = cluster
-
-const { data } = rawData as any
-
 let counter = 0
+
 if (isPrimary) {
-  for (let i = 0; i < available; i++) {
+  for (let i = 1; i < available; i++) {
     const worker = fork()
     worker.on('message', () => {
       counter++
-      console.log(`${counter}/${available} finished`)
-      if (counter == available) {
+      console.log(`${counter}/${available - 1} finished`)
+      if (counter === available - 1) {
         process.exit(0)
       }
     })
@@ -42,32 +41,47 @@ if (isPrimary) {
 
     for (let i = start; i <= end; i++) {
       const song = data[i]
-
       if (!song) {
         continue
       }
-      let romanji = ''
-      const isJapan = Kuroshiro.Util.isJapanese(song.name)
-      if (isJapan) {
-        romanji = await kuroshiro.convert(song.name, {
-          to: 'romaji'
-        })
+
+      let ARomanji = ''
+      let newArtistName = song.star.substring(1, song.star.length)
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        if (
+          !['|', ' '].includes(newArtistName.charAt(newArtistName.length - 1))
+        ) {
+          break
+        }
+        newArtistName = newArtistName.substring(0, newArtistName.length - 1)
+      }
+      const isArtistJapan = Kuroshiro.Util.isJapanese(newArtistName)
+      if (isArtistJapan) {
+        ARomanji = await kuroshiro.convert(newArtistName, { to: 'romaji' })
+      }
+
+      let TRomanji = ''
+      const isTitleJapan = Kuroshiro.Util.isJapanese(song.name)
+      if (isTitleJapan) {
+        TRomanji = await kuroshiro.convert(song.name, { to: 'romaji' })
       }
 
       await Promise.allSettled([
         typesenseClient.collections('songs').documents().create({
           songId: song.numb,
+          artist: newArtistName,
           title: song.name,
-          artist: song.star,
-          romanji,
-          alias: ''
+          ARomanji,
+          TRomanji
         }),
         db.song.create({
           data: {
             songId: song.numb,
+            artist: newArtistName,
             title: song.name,
-            artist: song.star,
-            romanji
+            ...(ARomanji && { ARomanji }),
+            ...(TRomanji && { TRomanji })
           }
         })
       ])
