@@ -11,7 +11,7 @@
 		"@nestjs/common": "9.1.5",
 		"@nestjs/core": "9.1.5",
 		"@nestjs/graphql": "10.1.3",
-		"@nestjs/mercurius": "10.1.3",
+		"@nestjs/mercurius": "10.1.6",
 		"@nestjs/platform-fastify": "9.1.5",
 		"@karaoke/core": "workspace:*",
 		"@karaoke/db": "workspace:*",
