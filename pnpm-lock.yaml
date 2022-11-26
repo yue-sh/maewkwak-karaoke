@@ -101,7 +101,7 @@ importers:
       rxjs: 7.5.7
       ts-loader: 9.4.1
       ts-morph: 16.0.0
-      typesense: 1.4.1
+      typesense: 1.4.3
       webpack: 5.74.0
     dependencies:
       '@babel/runtime': 7.19.4
@@ -119,7 +119,7 @@ importers:
       mercurius: 10.5.1_graphql@16.6.0
       reflect-metadata: 0.1.13
       rxjs: 7.5.7
-      typesense: 1.4.1_@babel+runtime@7.19.4
+      typesense: 1.4.3_@babel+runtime@7.19.4
     devDependencies:
       '@nestjs/cli': 9.1.5
       '@nestjs/schematics': 9.0.3_typescript@4.9.3
@@ -141,7 +141,7 @@ importers:
       os: ^0.1.2
       prisma: 4.6.1
       ts-node: 10.9.1
-      typesense: 1.4.2
+      typesense: 1.4.3
     dependencies:
       '@karaoke/core': link:../core
       '@nestjs/common': 9.1.6_yzt46al3aifnexifjjdb4dxxja
@@ -150,7 +150,7 @@ importers:
       kuroshiro: 1.2.0
       kuroshiro-analyzer-kuromoji: 1.1.0
       os: 0.1.2
-      typesense: 1.4.2_@babel+runtime@7.20.1
+      typesense: 1.4.3_@babel+runtime@7.20.1
     devDependencies:
       prisma: 4.6.1
       ts-node: 10.9.1_wup25etrarvlqkprac7h35hj7u
@@ -7735,8 +7735,20 @@ packages:
       - debug
     dev: false
 
-  /typesense/1.4.1_@babel+runtime@7.19.4:
-    resolution: {integrity: sha512-M+3UCEohGA2IIOVVwXazFjx4iu8PtJJ3rm0D9mtYS/FxvPstA6OI9OH9kKpqRwry6hRyMWtcBF3BrN5aljhk/g==}
+  /typesense/1.4.2_@babel+runtime@7.20.1:
+    resolution: {integrity: sha512-nDH8IQpPysCi46iL4ywMLUOPRMf1EiCZpLNsbuN86/eE7io+rPi2V2VZkCBVlC6SqqNH68GCykneQD7iAXA+Aw==}
+    peerDependencies:
+      '@babel/runtime': ^7.17.2
+    dependencies:
+      '@babel/runtime': 7.20.1
+      axios: 0.26.1
+      loglevel: 1.8.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /typesense/1.4.3_@babel+runtime@7.19.4:
+    resolution: {integrity: sha512-dZWr8Xe7+ltsvJATI3CqviljWvTD238QySo8gEQ+LDuiuZSIR2B4UgLZM5TVxQamdhtMVZ9zx3U3H7/GL3xjXw==}
     peerDependencies:
       '@babel/runtime': ^7.17.2
     dependencies:
@@ -7747,8 +7759,8 @@ packages:
       - debug
     dev: false
 
-  /typesense/1.4.2_@babel+runtime@7.20.1:
-    resolution: {integrity: sha512-nDH8IQpPysCi46iL4ywMLUOPRMf1EiCZpLNsbuN86/eE7io+rPi2V2VZkCBVlC6SqqNH68GCykneQD7iAXA+Aw==}
+  /typesense/1.4.3_@babel+runtime@7.20.1:
+    resolution: {integrity: sha512-dZWr8Xe7+ltsvJATI3CqviljWvTD238QySo8gEQ+LDuiuZSIR2B4UgLZM5TVxQamdhtMVZ9zx3U3H7/GL3xjXw==}
     peerDependencies:
       '@babel/runtime': ^7.17.2
     dependencies:
