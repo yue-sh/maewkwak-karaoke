@@ -17,7 +17,7 @@
 		"@karaoke/db": "workspace:*",
 		"fastify": "4.9.2",
 		"graphql": "16.6.0",
-		"graphql-scalars": "1.19.0",
+		"graphql-scalars": "1.20.1",
 		"graphql-tools": "8.3.12",
 		"mercurius": "10.5.1",
 		"reflect-metadata": "0.1.13",
