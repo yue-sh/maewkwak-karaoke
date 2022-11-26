@@ -94,7 +94,7 @@ importers:
       '@nestjs/schematics': 9.0.3
       fastify: 4.9.2
       graphql: 16.6.0
-      graphql-scalars: 1.19.0
+      graphql-scalars: 1.20.1
       graphql-tools: 8.3.12
       mercurius: 10.5.1
       reflect-metadata: 0.1.13
@@ -114,7 +114,7 @@ importers:
       '@nestjs/platform-fastify': 9.1.5_oi7pl2drsvwscscw3d6lgmg6yu
       fastify: 4.9.2
       graphql: 16.6.0
-      graphql-scalars: 1.19.0_graphql@16.6.0
+      graphql-scalars: 1.20.1_graphql@16.6.0
       graphql-tools: 8.3.12_graphql@16.6.0
       mercurius: 10.5.1_graphql@16.6.0
       reflect-metadata: 0.1.13
@@ -5050,8 +5050,8 @@ packages:
       lodash.mergewith: 4.6.2
     dev: false
 
-  /graphql-scalars/1.19.0_graphql@16.6.0:
-    resolution: {integrity: sha512-Kg1ecLMMYdCCfKTsi5rJ6Och3KRLEzWdze1lVbCoP+Grjp2a33rogVvECCKAgeOSWCYM7ctaJ5fVdVgzCSN6fA==}
+  /graphql-scalars/1.20.1_graphql@16.6.0:
+    resolution: {integrity: sha512-HCSosMh8l/DVYL3/wCesnZOb+gbiaO/XlZQEIKOkWDJUGBrc15xWAs5TCQVmrycT0tbEInii+J8eoOyMwxx8zg==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
