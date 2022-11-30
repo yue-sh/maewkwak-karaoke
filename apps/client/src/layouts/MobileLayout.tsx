@@ -42,7 +42,7 @@ export const MobileLayout = ({ children }) => {
             {children}
           </main>
           <div>
-            <Toaster containerClassName='!bottom-[6rem]' />
+            <Toaster containerClassName="!bottom-[6rem]" />
           </div>
           <div class="px-2 py-4 grid grid-cols-5 bg-gray-100 z-[99999999] fixed bottom-0 w-full max-w-md">
             <NavbarItem

@@ -45,7 +45,7 @@ if (isPrimary) {
         continue
       }
 
-      let ARomanji = ''
+      let artistRomanji = ''
       let newArtistName = song.star.substring(1, song.star.length)
       // eslint-disable-next-line no-constant-condition
       while (true) {
@@ -58,13 +58,13 @@ if (isPrimary) {
       }
       const isArtistJapan = Kuroshiro.Util.isJapanese(newArtistName)
       if (isArtistJapan) {
-        ARomanji = await kuroshiro.convert(newArtistName, { to: 'romaji' })
+        artistRomanji = await kuroshiro.convert(newArtistName, { to: 'romaji' })
       }
 
-      let TRomanji = ''
+      let titleRomanji = ''
       const isTitleJapan = Kuroshiro.Util.isJapanese(song.name)
       if (isTitleJapan) {
-        TRomanji = await kuroshiro.convert(song.name, { to: 'romaji' })
+        titleRomanji = await kuroshiro.convert(song.name, { to: 'romaji' })
       }
 
       await Promise.allSettled([
@@ -72,16 +72,16 @@ if (isPrimary) {
           songId: song.numb,
           artist: newArtistName,
           title: song.name,
-          ARomanji,
-          TRomanji
+          artistRomanji,
+          titleRomanji
         }),
         db.song.create({
           data: {
             songId: song.numb,
             artist: newArtistName,
             title: song.name,
-            ...(ARomanji && { ARomanji }),
-            ...(TRomanji && { TRomanji })
+            ...(artistRomanji && { artistRomanji }),
+            ...(titleRomanji && { titleRomanji })
           }
         })
       ])

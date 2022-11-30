@@ -13,13 +13,49 @@ export class SongService {
       .documents()
       .search({
         q: query,
-        query_by: 'title, artist, romanji, alias',
+        query_by: 'title, artist, artistRomanji, titleRomanji',
         per_page: 20,
         use_cache: true
       })
       .then((data) => data.hits)
 
     const songs = hits.map((hit) => hit.document)
+    return songs
+  }
+
+  async searchSongsFallback(query: string) {
+    const songs = await this.db.song.findMany({
+      where: {
+        OR: [
+          {
+            title: {
+              contains: query,
+              mode: 'insensitive'
+            }
+          },
+          {
+            artist: {
+              contains: query,
+              mode: 'insensitive'
+            }
+          },
+          {
+            artistRomanji: {
+              contains: query,
+              mode: 'insensitive'
+            }
+          },
+          {
+            titleRomanji: {
+              contains: query,
+              mode: 'insensitive'
+            }
+          }
+        ]
+      },
+      take: 50
+    })
+
     return songs
   }
 }

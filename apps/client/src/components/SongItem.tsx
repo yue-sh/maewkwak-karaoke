@@ -16,10 +16,16 @@ export const SongItem = ({
       </div>
       <div class="block text-gray-600">
         <h1>
-          {title} {romanji && (<span class="text-[12px] text-gray-500">- {romanji}</span>)}
+          {title}{' '}
+          {romanji && (
+            <span class="text-[12px] text-gray-500">- {romanji}</span>
+          )}
         </h1>
         <p class="text-xs text-gray-400">
-          {artist} {artistRomanji && <span class="text-[12px] text-gray-500">- {artistRomanji}</span>}
+          {artist}{' '}
+          {artistRomanji && (
+            <span class="text-[12px] text-gray-500">- {artistRomanji}</span>
+          )}
         </p>
       </div>
 

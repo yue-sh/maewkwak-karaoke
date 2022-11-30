@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 import { typesenseClient } from './utils'
 import childProcess from 'child_process'
 
@@ -9,8 +10,8 @@ export async function seedSongs(): Promise<void> {
       { name: 'songId', type: 'string' },
       { name: 'artist', type: 'string', facet: true },
       { name: 'title', type: 'string', facet: true },
-      { name: 'ARomanji', type: 'string', facet: true, optional: true },
-      { name: 'TRomanji', type: 'string', facet: true, optional: true }
+      { name: 'artistRomanji', type: 'string', facet: true, optional: true },
+      { name: 'titleRomanji', type: 'string', facet: true, optional: true }
     ]
   }
   try {
@@ -21,8 +22,10 @@ export async function seedSongs(): Promise<void> {
     console.log('💀 Collection for indexing search does not exist, creating \n')
     await typesenseClient.collections().create(songSchema as any)
   }
-  const numFiles = fs.readdirSync('./prisma/seeds/data').length - 1
-  if (numFiles == 0) {
+  const numFiles = fs
+    .readdirSync('./prisma/seeds/data')
+    .filter((file) => path.extname(file) === '.json').length
+  if (numFiles === 0) {
     throw new Error('No data file founded')
   }
 

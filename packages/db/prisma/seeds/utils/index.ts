@@ -20,7 +20,7 @@ export async function cleanupDb(db): Promise<void> {
         )
         console.log(`Cleanup table : ${tablename}`, result)
       } catch (error) {
-        console.log('Clean up error : ', error)
+        console.log('Clean up error: ', error)
       }
     }
   }

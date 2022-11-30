@@ -10,4 +10,9 @@ export class SongResolver {
   async searchSongs(@Args('query') query: string) {
     return this.service.searchSongs(query)
   }
+
+  @Query(() => [Song])
+  async searchSongsFallback(@Args('query') query: string) {
+    return this.service.searchSongsFallback(query)
+  }
 }

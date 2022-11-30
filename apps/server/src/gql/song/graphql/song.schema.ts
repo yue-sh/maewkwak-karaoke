@@ -12,6 +12,9 @@ export class Song {
   songId: string
 
   @Field(() => String)
+  artist: string
+
+  @Field(() => String)
   title: string
 
   @Field(() => String)
@@ -19,4 +22,10 @@ export class Song {
 
   @Field(() => String)
   titleRomanji: string
+
+  @Field(() => DateTimeResolverV2)
+  createdAt: Date
+
+  @Field(() => DateTimeResolverV2)
+  updatedAt: Date
 }
