@@ -5,18 +5,19 @@ datasource db {
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["interactiveTransactions", "fullTextIndex", "fullTextSearch"]
+  previewFeatures = ["fullTextSearch"]
   binaryTargets   = ["native", "rhel-openssl-1.1.x"]
   output          = "../generated/client"
 }
 
 model Song {
-  id       String  @id @default(cuid())
-  songId   String
-  artist   String
-  title    String
-  ARomanji String?
-  TRomanji String?
+  id            String  @id @default(cuid())
+  songId        String
+  artist        String
+  title         String
+  artistRomanji String?
+  titleRomanji  String?
 
+  @@index([artist, title, artistRomanji, titleRomanji])
   @@map("songs")
 }

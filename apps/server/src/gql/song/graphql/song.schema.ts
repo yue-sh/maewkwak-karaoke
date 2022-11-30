@@ -15,11 +15,8 @@ export class Song {
   title: string
 
   @Field(() => String)
-  artist: string
+  artistRomanji: string
 
   @Field(() => String)
-  romanji: string
-
-  @Field(() => [String])
-  alias: string[]
+  titleRomanji: string
 }

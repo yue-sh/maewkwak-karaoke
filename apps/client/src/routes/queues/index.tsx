@@ -45,7 +45,9 @@ export default function Queue() {
                   </button>
                   <button
                     class="w-12 h-12 rounded-md text-white bg-red-500 hover:bg-red-600 flex justify-center items-center"
-                    onClick={() => sendPayload('deletesong', `${song.flag2}|${song.flag3}`)}
+                    onClick={() =>
+                      sendPayload('deletesong', `${song.flag2}|${song.flag3}`)
+                    }
                   >
                     <BiSolidTrash />
                   </button>

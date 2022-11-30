@@ -22,7 +22,6 @@ export default function Home() {
     })
   }
 
-
   return (
     <MobileLayout>
       <div class="space-y-6 p-4">
@@ -39,7 +38,10 @@ export default function Home() {
             />
             <div class="block">
               <div class="flex justify-center">
-                <button class="p-8 bg-green-200 rounded-full text-green-600" onclick={() => controlPayload('playcontrol', '3')}>
+                <button
+                  class="p-8 bg-green-200 rounded-full text-green-600"
+                  onclick={() => controlPayload('playcontrol', '3')}
+                >
                   <BiRegularSkipNext size={48} />
                 </button>
               </div>

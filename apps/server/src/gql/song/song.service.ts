@@ -7,12 +7,12 @@ import { typesenseClient } from '../../libs/typesense'
 export class SongService {
   constructor(private readonly db: PrismaService) {}
 
-  async searchSongs(name: string) {
+  async searchSongs(query: string) {
     const hits: any = await typesenseClient
       .collections('songs')
       .documents()
       .search({
-        q: name,
+        q: query,
         query_by: 'title, artist, romanji, alias',
         per_page: 20,
         use_cache: true

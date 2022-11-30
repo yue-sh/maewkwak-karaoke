@@ -6,13 +6,8 @@ import { Song } from './graphql/song.schema'
 export class SongResolver {
   constructor(private readonly service: SongService) {}
 
-  @Query(() => String)
-  hello(): string {
-    return 'world'
-  }
-
   @Query(() => [Song])
-  async searchSongs(@Args('name') name: string) {
-    return this.service.searchSongs(name)
+  async searchSongs(@Args('query') query: string) {
+    return this.service.searchSongs(query)
   }
 }
