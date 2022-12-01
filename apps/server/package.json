@@ -28,7 +28,7 @@
 		"@nestjs/cli": "9.1.5",
 		"@nestjs/schematics": "9.0.3",
 		"ts-loader": "9.4.1",
-		"ts-morph": "16.0.0",
+		"ts-morph": "17.0.1",
 		"webpack": "5.75.0"
 	}
 }
