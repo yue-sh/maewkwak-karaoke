@@ -2,5 +2,24 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
 		"config:base"
-	]
+	],
+	"lockFileMaintenance": {
+		"enabled": true
+	},
+	"packageRules": [
+		{
+			"packagePatterns": [
+				"*"
+			],
+			"enabled": true
+		}
+	],
+	"vulnerabilityAlerts": {
+		"enabled": true
+	},
+	"schedule": [
+		"before 9pm every day",
+		"after 9am every day"
+	],
+	"timezone": "Asia/Bangkok"
 }
