@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { PrismaTypes, PrismaService } from '@karaoke/db'
 
-import { typesenseClient } from '../../libs/typesense'
+import { typesenseClient } from '../../../libs/typesense'
 
 @Injectable()
 export class SongService {
@@ -14,11 +14,10 @@ export class SongService {
       .search({
         q: query,
         query_by: 'title, artist, artistRomanji, titleRomanji',
-        per_page: 20,
+        per_page: 50,
         use_cache: true
       })
       .then((data) => data.hits)
-
     const songs = hits.map((hit) => hit.document)
     return songs
   }
