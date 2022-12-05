@@ -13,7 +13,7 @@
 		"db:generate": "prisma generate"
 	},
 	"prisma": {
-		"seed": "ts-node prisma/seeds/song.init.ts"
+		"seed": "ts-node prisma/seeds/index.ts"
 	},
 	"dependencies": {
 		"@karaoke/core": "workspace:*",
