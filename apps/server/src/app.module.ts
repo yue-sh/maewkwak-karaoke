@@ -9,6 +9,7 @@ import { SongModule } from './api/v1/song/song.module'
   imports: [
     GraphQLModule.forRoot<MercuriusDriverConfig>({
       cache: true,
+      graphiql: true,
       path: '/api/v1/song/graphql',
       autoSchemaFile: true,
       driver: MercuriusDriver,
