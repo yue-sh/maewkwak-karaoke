@@ -1,0 +1,6 @@
+dist
+.env
+.turbo
+.solid
+generated
+node_modules

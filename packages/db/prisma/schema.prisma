@@ -1,0 +1,26 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+  binaryTargets   = ["native", "rhel-openssl-1.1.x"]
+  output          = "../generated/client"
+}
+
+model Song {
+  id            String  @id @default(cuid())
+  songId        String
+  artist        String
+  title         String
+  artistRomanji String?
+  titleRomanji  String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([artist, title, artistRomanji, titleRomanji])
+  @@map("songs")
+}

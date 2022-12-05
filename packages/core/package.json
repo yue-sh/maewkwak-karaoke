@@ -1,0 +1,13 @@
+{
+	"name": "@karaoke/core",
+	"version": "1.0.0",
+	"private": true,
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rimraf dist && swc src -d dist && tsc --build"
+	}
+}

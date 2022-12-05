@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"baseUrl": "src",
+		"outDir": "dist",
+		"skipLibCheck": true,
+		"emitDeclarationOnly": true,
+		"isolatedModules": false,
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true
+	},
+	"include": [
+		"**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"dist/**/*"
+	]
+}

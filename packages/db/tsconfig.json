@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"target": "ES2019",
+		"module": "CommonJS",
+		"lib": [
+			"ES2019"
+		],
+		"outDir": "dist",
+		"emitDeclarationOnly": true,
+		"isolatedModules": false,
+		"declaration": true,
+		"declarationMap": true,
+		"resolveJsonModule": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"strict": true,
+		"moduleResolution": "node",
+		"skipLibCheck": true,
+		"noImplicitAny": false,
+		"esModuleInterop": true,
+		"strictNullChecks": false,
+		"forceConsistentCasingInFileNames": true
+	},
+	"ts-node": {
+		"swc": true
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

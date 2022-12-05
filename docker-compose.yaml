@@ -1,0 +1,39 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+  typesense_data:
+
+
+services:
+  db:
+    container_name: karaoke-database
+    image: postgres:15-alpine
+    restart: unless-stopped
+    ports:
+      - ${DATABASE_PORT:-5432}:5432
+    environment:
+      - POSTGRES_HOST=${DATABASE_HOST}
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  typesense:
+    container_name: karaoke-typesense
+    image: typesense/typesense:0.24.0.rcn31
+    restart: unless-stopped
+    environment:
+      - TYPESENSE_API_KEY=xyz
+      - TYPESENSE_DATA_DIR=/mnt/typesense/data
+    ports:
+      - ${TYPESENSE_PORT:-8108}:8108
+    volumes:
+      - typesense_data:/mnt/typesense/data
+
+  typesense-dashboard:
+    container_name: karaoke-typesense-dashboard
+    image: funxtionatics/typesense-dashboard:1.2.0
+    ports:
+      - 8109:80

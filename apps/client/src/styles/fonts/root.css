@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Main';
+    src: url('c956db618c30c23d6cdd1dc810da8cf9.woff2') format('woff2'),
+        url('c956db618c30c23d6cdd1dc810da8cf9.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Main';
+    src: url('1b4ae7cb510d5c3e1af8566f514aaaf3.woff2') format('woff2'),
+        url('1b4ae7cb510d5c3e1af8566f514aaaf3.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Main';
+    src: url('752a086259669b5e19cee7c120eea365.woff2') format('woff2'),
+        url('752a086259669b5e19cee7c120eea365.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Main';
+    src: url('3c2c0d191d0d401a39b08c01b33ef93e.woff2') format('woff2'),
+        url('3c2c0d191d0d401a39b08c01b33ef93e.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Main';
+    src: url('c47ccac0b570e80c6417788fae096fcf.woff2') format('woff2'),
+        url('c47ccac0b570e80c6417788fae096fcf.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
