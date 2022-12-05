@@ -8,7 +8,7 @@ export class SongService {
   constructor(private readonly db: PrismaService) {}
 
   async searchSongs(query: string) {
-    const hits: any = await typesenseClient
+    const hits = await typesenseClient
       .collections('songs')
       .documents()
       .search({
@@ -18,12 +18,12 @@ export class SongService {
         use_cache: true
       })
       .then((data) => data.hits)
-    const songs = hits.map((hit) => hit.document)
-    return songs
+
+    return [...hits.map((hit) => hit.document)]
   }
 
   async searchSongsFallback(query: string) {
-    const songs = await this.db.song.findMany({
+    return await this.db.song.findMany({
       where: {
         OR: [
           {
@@ -54,7 +54,5 @@ export class SongService {
       },
       take: 50
     })
-
-    return songs
   }
 }
