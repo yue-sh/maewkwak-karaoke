@@ -7,7 +7,7 @@
     "start": "nest start"
   },
   "dependencies": {
-    "@babel/runtime": "7.20.1",
+    "@babel/runtime": "7.20.6",
     "@nestjs/common": "9.1.5",
     "@nestjs/core": "9.1.5",
     "@nestjs/graphql": "10.1.6",
