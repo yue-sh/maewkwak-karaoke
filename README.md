@@ -5,6 +5,30 @@
 - [Server](./apps/server) public api
 - [Client](./apps/client) main web client that used to control karaoke
 
+## Public endpoint
+
+```bash
+REST
+
+GET /api/v1/song/search?q=[QUERY]
+GET /api/v1/song/search/fallback?q=[QUERY]
+
+GraphQL
+
+MAIN /api/v1/song/graphql
+GraphiQL /graphiql
+```
+
+query can be artist name, song name, romanji for both song name & artist
+
+normal search use typesense for searching, fallback search use postgres for searching
+
+## Known issue
+
+```bash
+As of now macos & ios only works with safari browser because of the CORS problem
+```
+
 ## Disclaimer
 
 You needed to seed the data first before you can start searching songs, you can seed the data by running the following command
@@ -26,12 +50,6 @@ you can also use the sample data (sample_data.json) and rename it to data.json t
 3. open the web client in your browser with the url
 ex # http://HOST:PORT/?ip=[WECHAT_IP]&mac=[WECHAT_MAC]&port=[WECHAT_PORT]&mid=[WECHAT_MID]
 the url query params are required and you can get from the wechat qr code
-```
-
-## Known issue
-
-```bash
-As of now macos & ios only works with safari browser because of the CORS problem
 ```
 
 ## Development
