@@ -58,7 +58,7 @@ export default function App() {
                 hit
               })}</p>
               <p class="c3e8e8"><b class="ceaf38">A-Romanji</b>: ${highlight({
-                attribute: 'ARomanji',
+                attribute: 'artistRomanji',
                 cssClasses: {
                   highlighted: 'd3er1f'
                 },
@@ -72,7 +72,7 @@ export default function App() {
                 hit
               })}</p>
               <p class="c3e8e8"><b class="ceaf38">T-Romanji</b>: ${highlight({
-                attribute: 'TRomanji',
+                attribute: 'titleRomanji',
                 cssClasses: {
                   highlighted: 'd3er1f'
                 },
