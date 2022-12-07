@@ -18,7 +18,7 @@ export default function App() {
       cacheSearchResultsForSeconds: 2 * 60
     },
     additionalSearchParameters: {
-      query_by: 'artist, title, ARomanji, TRomanji',
+      query_by: 'artist, title, artistRomanji, titleRomanji',
       sort_by: '_text_match:desc',
       group_limit: 1,
       per_page: 50

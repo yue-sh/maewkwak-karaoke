@@ -56,8 +56,8 @@ export default function Songs() {
                     id={hit.songId}
                     title={hit.title}
                     artist={hit.artist}
-                    romanji={hit.TRomanji}
-                    artistRomanji={hit.ARomanji}
+                    titleRomanji={hit.titleRomanji}
+                    artistRomanji={hit.artistRomanji}
                     onAdd={addSongToQueue}
                   />
                 )}

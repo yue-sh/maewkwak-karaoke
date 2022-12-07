@@ -4,7 +4,7 @@ export const SongItem = ({
   id,
   title,
   artist,
-  romanji = null,
+  titleRomanji = null,
   artistRomanji = null,
   onAdd = null,
   customAction = null
@@ -17,8 +17,8 @@ export const SongItem = ({
       <div class="block text-gray-600">
         <h1>
           {title}{' '}
-          {romanji && (
-            <span class="text-[12px] text-gray-500">- {romanji}</span>
+          {titleRomanji && (
+            <span class="text-[12px] text-gray-500">- {titleRomanji}</span>
           )}
         </h1>
         <p class="text-xs text-gray-400">
