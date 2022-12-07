@@ -1,0 +1,24 @@
+{
+  "name": "client-fallback",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "start": "pnpm serve"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.20.1",
+    "@solidjs/router": "^0.5.0",
+    "instantsearch.js": "^4.49.1",
+    "solid-js": "^1.6.2",
+    "typesense-instantsearch-adapter": "^2.4.2"
+  },
+  "devDependencies": {
+    "@unocss/preset-mini": "^0.46.5",
+    "@unocss/vite": "^0.46.5",
+    "vite": "^3.2.4",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-solid": "^2.4.0"
+  }
+}

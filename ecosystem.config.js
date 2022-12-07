@@ -24,7 +24,18 @@ const karaoke_front = {
   env,
   name: 'karaoke-front',
   script: './apps/client/dist/server.js',
-  instances: 20,
+  instances: 5,
+  exec_mode: 'cluster',
+  watch: false,
+  autorestart: true,
+  max_memory_restart: '512M',
+}
+
+const karaoke_fallback = {
+  env,
+  name: 'karaoke-fallback',
+  script: 'pnpm start:client:fallback',
+  instances: 5,
   exec_mode: 'cluster',
   watch: false,
   autorestart: true,
@@ -44,5 +55,5 @@ const karaoke_server = {
 
 
 module.exports = {
-  apps: [karaoke_front, karaoke_server],
+  apps: [karaoke_front, karaoke_fallback, karaoke_server],
 };
