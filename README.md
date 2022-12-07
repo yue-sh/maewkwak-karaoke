@@ -16,6 +16,7 @@ pnpm db:seed
 ```
 
 for data.json, go find it yourself :D
+you can also use the sample data (sample_data.json) and rename it to data.json to test the searching as well
 
 ## Usage
 
