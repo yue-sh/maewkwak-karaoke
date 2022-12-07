@@ -55,9 +55,13 @@ you can also use the sample data (sample_data.json) and rename it to data.json t
 
 ```bash
 1. Scan wechat qr code in the karaoke
+
 2. make sure you are in the same network with the karaoke
+
 3. open the web client in your browser with the url
+
 ex # http://HOST:PORT/?ip=[WECHAT_IP]&mac=[WECHAT_MAC]&port=[WECHAT_PORT]&mid=[WECHAT_MID]
+
 the url query params are required and you can get from the wechat qr code
 ```
 
