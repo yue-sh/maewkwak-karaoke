@@ -68,7 +68,7 @@ importers:
       solid-js: 1.6.2
       solid-start: 0.2.5_3zrnixj5s2zo7r5ma456ac2ypm
       solid-toast: 0.3.5_solid-js@1.6.2
-      typesense-instantsearch-adapter: 2.4.2_@babel+runtime@7.20.1
+      typesense-instantsearch-adapter: 2.4.2_@babel+runtime@7.20.6
       undici: 5.12.0
     devDependencies:
       autoprefixer: 10.4.13_postcss@8.4.19
@@ -82,7 +82,7 @@ importers:
 
   apps/server:
     specifiers:
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
       '@karaoke/core': workspace:*
       '@karaoke/db': workspace:*
       '@nestjs/cli': 9.1.5
@@ -104,7 +104,7 @@ importers:
       typesense: 1.4.3
       webpack: 5.75.0
     dependencies:
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
       '@karaoke/core': link:../../packages/core
       '@karaoke/db': link:../../packages/db
       '@nestjs/common': 9.1.5_yzt46al3aifnexifjjdb4dxxja
@@ -119,7 +119,7 @@ importers:
       mercurius: 10.5.1_graphql@16.6.0
       reflect-metadata: 0.1.13
       rxjs: 7.5.7
-      typesense: 1.4.3_@babel+runtime@7.20.1
+      typesense: 1.4.3_@babel+runtime@7.20.6
     devDependencies:
       '@nestjs/cli': 9.1.5
       '@nestjs/schematics': 9.0.3_typescript@4.9.3
@@ -150,7 +150,7 @@ importers:
       kuroshiro: 1.2.0
       kuroshiro-analyzer-kuromoji: 1.1.0
       os: 0.1.2
-      typesense: 1.4.3_@babel+runtime@7.20.1
+      typesense: 1.4.3_@babel+runtime@7.20.6
     devDependencies:
       prisma: 4.6.1
       ts-node: 10.9.1_wup25etrarvlqkprac7h35hj7u
@@ -255,7 +255,7 @@ packages:
     resolution: {integrity: sha512-IlYgIaCUEkz9ezNbwugwKv991oOHhveyq6nzL0F1jDzg1p3q5Yj/vO4KpNG910r2dwGCG3nEm5GtChcLnarhFA==}
     dependencies:
       '@algolia/ui-components-shared': 1.2.1
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
     dev: false
 
   /@algolia/ui-components-shared/1.2.1:
@@ -1455,11 +1455,11 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/runtime/7.20.1:
-    resolution: {integrity: sha512-mrzLkl6U9YLF8qpqI7TB82PESyEGjm/0Ly91jG575eVxMMlb8fYfOXFZIJ8XfLrJZQbm7dlKry2bJmXBUEkdFg==}
+  /@babel/runtime/7.20.6:
+    resolution: {integrity: sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.13.10
+      regenerator-runtime: 0.13.11
 
   /@babel/template/7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
@@ -5475,7 +5475,7 @@ packages:
     resolution: {integrity: sha512-yBGCK9oDOY3LGZ/KXaN9m7ADcAuSczOR2FoMRYwHLUlis3/o/uxdMVROAjENFO0NQJgALhIdWxI/vIBVrMCk9w==}
     engines: {node: '>=6.5.0'}
     dependencies:
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
     dev: false
 
   /levn/0.3.0:
@@ -6409,13 +6409,13 @@ packages:
   /regenerate/1.4.2:
     resolution: {integrity: sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==}
 
-  /regenerator-runtime/0.13.10:
-    resolution: {integrity: sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==}
+  /regenerator-runtime/0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
 
   /regenerator-transform/0.15.0:
     resolution: {integrity: sha512-LsrGtPmbYg19bcPHwdtmXwbW+TqNvtY4riE3P83foeHRroMbH6/2ddFBfab3t7kbzc7v7p4wbkIecHImqt0QNg==}
     dependencies:
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
 
   /regexp.prototype.flags/1.4.3:
     resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==}
@@ -7429,36 +7429,36 @@ packages:
     hasBin: true
     dev: true
 
-  /typesense-instantsearch-adapter/2.4.2_@babel+runtime@7.20.1:
+  /typesense-instantsearch-adapter/2.4.2_@babel+runtime@7.20.6:
     resolution: {integrity: sha512-2pAeKwAHEOVwNpQQhcc4sOzL7I6zIQmo09qR+fs0Y5r8l7Zg/4KvxuwIWjAJJtQVeJFAmFqkk8ylxLRkrZs4ng==}
     requiresBuild: true
     peerDependencies:
       '@babel/runtime': ^7.17.2
     dependencies:
-      '@babel/runtime': 7.20.1
-      typesense: 1.4.2_@babel+runtime@7.20.1
+      '@babel/runtime': 7.20.6
+      typesense: 1.4.2_@babel+runtime@7.20.6
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /typesense/1.4.2_@babel+runtime@7.20.1:
+  /typesense/1.4.2_@babel+runtime@7.20.6:
     resolution: {integrity: sha512-nDH8IQpPysCi46iL4ywMLUOPRMf1EiCZpLNsbuN86/eE7io+rPi2V2VZkCBVlC6SqqNH68GCykneQD7iAXA+Aw==}
     peerDependencies:
       '@babel/runtime': ^7.17.2
     dependencies:
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
       axios: 0.26.1
       loglevel: 1.8.1
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /typesense/1.4.3_@babel+runtime@7.20.1:
+  /typesense/1.4.3_@babel+runtime@7.20.6:
     resolution: {integrity: sha512-dZWr8Xe7+ltsvJATI3CqviljWvTD238QySo8gEQ+LDuiuZSIR2B4UgLZM5TVxQamdhtMVZ9zx3U3H7/GL3xjXw==}
     peerDependencies:
       '@babel/runtime': ^7.17.2
     dependencies:
-      '@babel/runtime': 7.20.1
+      '@babel/runtime': 7.20.6
       axios: 0.26.1
       loglevel: 1.8.1
     transitivePeerDependencies:
