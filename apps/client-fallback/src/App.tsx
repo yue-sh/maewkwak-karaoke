@@ -57,13 +57,15 @@ export default function App() {
                 },
                 hit
               })}</p>
-              <p class="c3e8e8"><b class="ceaf38">A-Romanji</b>: ${highlight({
-                attribute: 'artistRomanji',
-                cssClasses: {
-                  highlighted: 'd3er1f'
-                },
-                hit
-              })}</p>
+              <p class="c3e8e8"><b class="ceaf38">Artist Romanji</b>: ${highlight(
+                {
+                  attribute: 'artistRomanji',
+                  cssClasses: {
+                    highlighted: 'd3er1f'
+                  },
+                  hit
+                }
+              )}</p>
               <p class="c3e8e8"><b class="ceaf38">Title</b>: ${highlight({
                 attribute: 'title',
                 cssClasses: {
@@ -71,13 +73,15 @@ export default function App() {
                 },
                 hit
               })}</p>
-              <p class="c3e8e8"><b class="ceaf38">T-Romanji</b>: ${highlight({
-                attribute: 'titleRomanji',
-                cssClasses: {
-                  highlighted: 'd3er1f'
-                },
-                hit
-              })}</p>
+              <p class="c3e8e8"><b class="ceaf38">Title Romanji</b>: ${highlight(
+                {
+                  attribute: 'titleRomanji',
+                  cssClasses: {
+                    highlighted: 'd3er1f'
+                  },
+                  hit
+                }
+              )}</p>
               <hr class="opacity-50" />
             </div>
             `
