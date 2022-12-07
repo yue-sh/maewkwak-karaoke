@@ -32,6 +32,21 @@ query can be artist name, song name, romanji for both song name & artist
 
 normal search use typesense for searching, fallback search use postgres for searching
 
+
+## Client Usage
+
+```bash
+1. Scan wechat qr code in the karaoke
+
+2. make sure you are in the same network with the karaoke
+
+3. open the web client in your browser with the url
+
+ex # http://karaoke.chiffon.day/?ip=[WECHAT_IP]&mac=[WECHAT_MAC]&port=[WECHAT_PORT]&mid=[WECHAT_MID]
+
+the url query params are required and you can get from the wechat qr code
+```
+
 ## Known issue
 
 ```bash
@@ -49,21 +64,8 @@ pnpm db:seed
 ```
 
 for data.json, go find it yourself :D
+
 you can also use the sample data (sample_data.json) and rename it to data.json to test the searching as well
-
-## Usage
-
-```bash
-1. Scan wechat qr code in the karaoke
-
-2. make sure you are in the same network with the karaoke
-
-3. open the web client in your browser with the url
-
-ex # http://HOST:PORT/?ip=[WECHAT_IP]&mac=[WECHAT_MAC]&port=[WECHAT_PORT]&mid=[WECHAT_MID]
-
-the url query params are required and you can get from the wechat qr code
-```
 
 ## Development
 
