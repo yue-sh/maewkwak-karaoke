@@ -29,7 +29,7 @@
     "lint": "eslint . --fix",
     "fmt:check": "prettier --check \"**/*.{ts,tsx,md}\"",
     "fmt": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "deploy": "dotnev -- pm2 startOrRestart ecosystem.config.js"
+    "pm2:deploy": "dotnev -- pm2 startOrRestart ecosystem.config.js"
   },
   "dependencies": {
     "dotenv": "16.0.3",
