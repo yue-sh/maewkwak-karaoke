@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { BiRegularSearch } from 'solid-icons/bi'
 import { SongItem } from '~/components/SongItem'
 import { MobileLayout } from '~/layouts/MobileLayout'
@@ -7,7 +6,7 @@ import instantsearch from 'instantsearch.js'
 import { searchBox, stats } from 'instantsearch.js/es/widgets'
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter'
 import connectHits from 'instantsearch.js/es/connectors/hits/connectHits'
-import { onMount } from 'solid-js'
+import { onMount, For } from 'solid-js'
 import { render } from 'solid-js/web'
 import payloadStore from '~/store/payload'
 import toast from 'solid-toast'
@@ -51,16 +50,18 @@ export default function Songs() {
           () => (
             <div class="space-y-2">
               {search.status == 'stalled' && <>Loading</>}
-              {hits.map((hit) => (
-                <SongItem
-                  id={hit.songId}
-                  title={hit.title}
-                  artist={hit.artist}
-                  romanji={hit.TRomanji}
-                  artistRomanji={hit.ARomanji}
-                  onAdd={addSongToQueue}
-                />
-              ))}
+              <For each={hits}>
+                {(hit) => (
+                  <SongItem
+                    id={hit.songId}
+                    title={hit.title}
+                    artist={hit.artist}
+                    romanji={hit.TRomanji}
+                    artistRomanji={hit.ARomanji}
+                    onAdd={addSongToQueue}
+                  />
+                )}
+              </For>
             </div>
           ),
           container
@@ -106,7 +107,7 @@ export default function Songs() {
   return (
     <MobileLayout>
       <div class="space-y-4">
-        <div class="relative sticky top-0">
+        <div class="sticky top-0">
           <div id="searchbox" />
           <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none z-20 pl-4">
             <BiRegularSearch />
@@ -114,7 +115,7 @@ export default function Songs() {
         </div>
 
         <div class="space-y-1 px-4">
-          <div id="stats"></div>
+          <div id="stats" />
           <div id="hits" />
         </div>
       </div>

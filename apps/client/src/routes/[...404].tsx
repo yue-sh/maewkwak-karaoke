@@ -7,7 +7,7 @@ export default function NotFound() {
         <img
           class="rounded-lg transition-all hover:scale-50 transform"
           src="https://pbs.twimg.com/media/FDZGuVMWUAIrJh6.jpg"
-        ></img>
+        />
         <p class="text-center mt-4 text-xl">Not Found</p>
       </div>
     </MobileLayout>

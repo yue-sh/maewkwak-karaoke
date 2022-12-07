@@ -11,7 +11,7 @@ import { Toaster } from 'solid-toast'
 import { NavbarItem } from '~/components/NavbarItem'
 import payloadStore from '~/store/payload'
 
-export const MobileLayout = ({ children }) => {
+export const MobileLayout = (props) => {
   const { payload, updatePayload } = payloadStore
 
   createEffect(() => {
@@ -32,14 +32,14 @@ export const MobileLayout = ({ children }) => {
       headimgurl: params.headimgurl
     }
     updatePayload(payloadObject)
-  }, [])
+  })
 
   return (
     <div class="flex max-w-md mx-auto">
       {payload() ? (
         <div class="relative flex flex-col flex-1 w-0 overflow-hidden">
           <main class="relative z-0 flex-1 overflow-y-auto transition-all transform-gpu focus:outline-none">
-            {children}
+            {props.children}
           </main>
           <div>
             <Toaster containerClassName="!bottom-[6rem]" />
