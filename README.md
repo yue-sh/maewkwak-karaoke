@@ -1,10 +1,5 @@
 # Karaoke
 
-## This monorepo compose of 2 apps
-
-- [Server](./apps/server) - public api
-- [Client](./apps/client) - main web client that used to control karaoke
-
 ## Public endpoint
 
 ```bash
