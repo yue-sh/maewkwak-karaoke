@@ -40,7 +40,7 @@ export default function Home() {
               <div class="flex justify-center">
                 <button
                   class="p-8 bg-green-200 rounded-full text-green-600"
-                  onclick={() => controlPayload('playcontrol', '3')}
+                  onClick={() => controlPayload('playcontrol', '3')}
                 >
                   <BiRegularSkipNext size={48} />
                 </button>
