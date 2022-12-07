@@ -1,17 +1,18 @@
-import { readFile } from 'fs';
-import { createServer } from 'http';
+/* eslint-disable @typescript-eslint/no-var-requires */
+const http = require('http');
+const fs = require('fs');
 
 const host = 'localhost';
-const port = 3001;
+const port = 4000;
 
-const httpServer = createServer(httpHandler);
+const httpServer = http.createServer(httpHandler);
 
 httpServer.listen(port, host, () => {
   console.log(`HTTP server running at http://${host}:${port}/`);
 });
 
 function httpHandler(req, res) {
-  readFile('./dist/' + req.url, function (err, data) {
+  fs.readFile('./dist/' + req.url, function (err, data) {
 
     if (err == null) {
 
