@@ -8,6 +8,15 @@
 ## Public endpoint
 
 ```bash
+
+# Client
+
+https://fallback.chiffon.day # client just for just searching songs
+
+http://karaoke.chiffon.day # main client
+
+# Server
+
 REST
 
 GET /api/v1/song/search?q=[QUERY]
