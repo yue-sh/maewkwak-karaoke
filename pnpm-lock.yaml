@@ -114,7 +114,7 @@ importers:
       '@nestjs/common': 9.1.5
       '@nestjs/core': 9.1.5
       '@nestjs/graphql': 10.1.6
-      '@nestjs/mercurius': 10.1.6
+      '@nestjs/mercurius': 10.1.7
       '@nestjs/platform-fastify': 9.1.5
       '@nestjs/schematics': 9.0.3
       fastify: 4.10.2
@@ -135,7 +135,7 @@ importers:
       '@nestjs/common': 9.1.5_yzt46al3aifnexifjjdb4dxxja
       '@nestjs/core': 9.1.5_vsetaglwzqrh7m5f7qpuxwsv6i
       '@nestjs/graphql': 10.1.6_og4o3i4slrjsyqd6uhu2yztsey
-      '@nestjs/mercurius': 10.1.6_xh6w4h5mzxefnuzxnsltpvbboq
+      '@nestjs/mercurius': 10.1.7_xh6w4h5mzxefnuzxnsltpvbboq
       '@nestjs/platform-fastify': 9.1.5_oi7pl2drsvwscscw3d6lgmg6yu
       fastify: 4.10.2
       graphql: 16.6.0
@@ -1982,8 +1982,8 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mercurius/10.1.6_xh6w4h5mzxefnuzxnsltpvbboq:
-    resolution: {integrity: sha512-4WpBBjFp8JLOD7GMr1mhSBXRkfkLSDZTneET6DyW5Im6/tDDoBROrHbo0/L9L+SN+y7VGSWc/crgLfiEE907Wg==}
+  /@nestjs/mercurius/10.1.7_xh6w4h5mzxefnuzxnsltpvbboq:
+    resolution: {integrity: sha512-AQa/Ly79N9FIt1qci/BgwT4WBSZRJm2YgtLHLSxosWHq+S47W8AnNG9WFDYSFYuQheRbJAYq4C6Y/xcwaXH3Mg==}
     peerDependencies:
       '@nestjs/common': ^8.2.3 || ^9.0.0
       '@nestjs/graphql': ^10.0.0
