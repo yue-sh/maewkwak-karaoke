@@ -3,7 +3,7 @@ const http = require('http');
 const fs = require('fs');
 
 const host = 'localhost';
-const port = 4000;
+const port = 3001;
 
 const httpServer = http.createServer(httpHandler);
 
