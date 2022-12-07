@@ -10,7 +10,7 @@
     "@babel/runtime": "7.20.6",
     "@nestjs/common": "9.1.5",
     "@nestjs/core": "9.1.5",
-    "@nestjs/graphql": "10.1.6",
+    "@nestjs/graphql": "10.1.7",
     "@nestjs/mercurius": "10.1.6",
     "@nestjs/platform-fastify": "9.1.5",
     "@karaoke/core": "workspace:*",
