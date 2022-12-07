@@ -17,7 +17,7 @@ importers:
       nodemon: ^2.0.20
       prettier: 2.8.0
       rimraf: 3.0.2
-      ts-loader: 9.4.1
+      ts-loader: 9.4.2
       ts-node: 10.9.1
       turbo: 1.6.3
       typescript: 4.9.3
@@ -37,7 +37,7 @@ importers:
       nodemon: 2.0.20
       prettier: 2.8.0
       rimraf: 3.0.2
-      ts-loader: 9.4.1_vfotqvx6lgcbf3upbs6hgaza4q
+      ts-loader: 9.4.2_vfotqvx6lgcbf3upbs6hgaza4q
       ts-node: 10.9.1_z5rwc64in7wli2glsmx4ylraqu
       typescript: 4.9.3
 
@@ -99,7 +99,7 @@ importers:
       mercurius: 10.5.1
       reflect-metadata: 0.1.13
       rxjs: 7.5.7
-      ts-loader: 9.4.1
+      ts-loader: 9.4.2
       ts-morph: 16.0.0
       typesense: 1.4.3
       webpack: 5.75.0
@@ -123,7 +123,7 @@ importers:
     devDependencies:
       '@nestjs/cli': 9.1.5
       '@nestjs/schematics': 9.0.3_typescript@4.9.3
-      ts-loader: 9.4.1_vfotqvx6lgcbf3upbs6hgaza4q
+      ts-loader: 9.4.2_vfotqvx6lgcbf3upbs6hgaza4q
       ts-morph: 16.0.0
       webpack: 5.75.0
 
@@ -7053,6 +7053,31 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /terser-webpack-plugin/5.3.6_636tzi34xn6xi5gghyfmnflkzm:
+    resolution: {integrity: sha512-kfLFk+PoLUQIbLmB1+PZDMRSZS99Mp+/MHqDNmMA6tOItzRt+Npe3E+fsMs5mfcM0wCtrrdU387UnV+vnSffXQ==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      '@swc/core': '*'
+      esbuild: '*'
+      uglify-js: '*'
+      webpack: ^5.1.0
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      esbuild:
+        optional: true
+      uglify-js:
+        optional: true
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.17
+      '@swc/core': 1.3.15
+      jest-worker: 27.5.1
+      schema-utils: 3.1.1
+      serialize-javascript: 6.0.0
+      terser: 5.15.1
+      webpack: 5.75.0_@swc+core@1.3.15
+    dev: true
+
   /terser-webpack-plugin/5.3.6_webpack@5.74.0:
     resolution: {integrity: sha512-kfLFk+PoLUQIbLmB1+PZDMRSZS99Mp+/MHqDNmMA6tOItzRt+Npe3E+fsMs5mfcM0wCtrrdU387UnV+vnSffXQ==}
     engines: {node: '>= 10.13.0'}
@@ -7197,8 +7222,8 @@ packages:
     dev: false
     optional: true
 
-  /ts-loader/9.4.1_vfotqvx6lgcbf3upbs6hgaza4q:
-    resolution: {integrity: sha512-384TYAqGs70rn9F0VBnh6BPTfhga7yFNdC5gXbQpDrBj9/KsT4iRkGqKXhziofHOlE2j6YEaiTYVGKKvPhGWvw==}
+  /ts-loader/9.4.2_vfotqvx6lgcbf3upbs6hgaza4q:
+    resolution: {integrity: sha512-OmlC4WVmFv5I0PpaxYb+qGeGOdm5giHU7HwDDUjw59emP2UYMHy9fFSDcYgSNoH8sXcj4hGCSEhlDZ9ULeDraA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
@@ -7209,7 +7234,7 @@ packages:
       micromatch: 4.0.5
       semver: 7.3.8
       typescript: 4.9.3
-      webpack: 5.75.0
+      webpack: 5.75.0_@swc+core@1.3.15
     dev: true
 
   /ts-morph/16.0.0:
@@ -7790,6 +7815,46 @@ packages:
       schema-utils: 3.1.1
       tapable: 2.2.1
       terser-webpack-plugin: 5.3.6_webpack@5.75.0
+      watchpack: 2.4.0
+      webpack-sources: 3.2.3
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+    dev: true
+
+  /webpack/5.75.0_@swc+core@1.3.15:
+    resolution: {integrity: sha512-piaIaoVJlqMsPtX/+3KTTO6jfvrSYgauFVdt8cr9LTHKmcq/AMd4mhzsiP7ZF/PGRNPGA8336jldh9l2Kt2ogQ==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    peerDependencies:
+      webpack-cli: '*'
+    peerDependenciesMeta:
+      webpack-cli:
+        optional: true
+    dependencies:
+      '@types/eslint-scope': 3.7.4
+      '@types/estree': 0.0.51
+      '@webassemblyjs/ast': 1.11.1
+      '@webassemblyjs/wasm-edit': 1.11.1
+      '@webassemblyjs/wasm-parser': 1.11.1
+      acorn: 8.8.1
+      acorn-import-assertions: 1.8.0_acorn@8.8.1
+      browserslist: 4.21.4
+      chrome-trace-event: 1.0.3
+      enhanced-resolve: 5.10.0
+      es-module-lexer: 0.9.3
+      eslint-scope: 5.1.1
+      events: 3.3.0
+      glob-to-regexp: 0.4.1
+      graceful-fs: 4.2.10
+      json-parse-even-better-errors: 2.3.1
+      loader-runner: 4.3.0
+      mime-types: 2.1.35
+      neo-async: 2.6.2
+      schema-utils: 3.1.1
+      tapable: 2.2.1
+      terser-webpack-plugin: 5.3.6_636tzi34xn6xi5gghyfmnflkzm
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:
