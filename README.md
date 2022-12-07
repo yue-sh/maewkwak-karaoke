@@ -28,6 +28,12 @@ ex # http://HOST:PORT/?ip=[WECHAT_IP]&mac=[WECHAT_MAC]&port=[WECHAT_PORT]&mid=[W
 the url query params are required and you can get from the wechat qr code
 ```
 
+## Known issue
+
+```bash
+As of now macos & ios only works with safari browser because of the CORS problem
+```
+
 ## Development
 
 ```bash
