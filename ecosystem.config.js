@@ -34,7 +34,7 @@ const karaoke_front = {
 const karaoke_fallback = {
   env,
   name: 'karaoke-fallback',
-  script: 'pnpm start:client:fallback',
+  script: './apps/client-fallback/main.js',
   instances: 5,
   exec_mode: 'cluster',
   watch: false,

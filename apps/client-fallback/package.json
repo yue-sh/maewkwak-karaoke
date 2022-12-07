@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "start": "pnpm serve"
+    "start": "vite preview"
   },
   "dependencies": {
     "@babel/runtime": "^7.20.1",
