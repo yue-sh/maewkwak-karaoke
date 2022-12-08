@@ -1,4 +1,6 @@
-# Karaoke
+<p align=center>
+  <img width=580 src=https://user-images.githubusercontent.com/61514399/206395498-0abada27-2321-4d05-a829-e9bc1dd1658d.png alt='MeawKwak label' />
+</p>
 
 ## Public endpoint
 
