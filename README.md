@@ -14,13 +14,13 @@ http://karaoke.chiffon.day # main client
 
 REST
 
-GET /api/v1/song/search?q=[QUERY]
-GET /api/v1/song/search/fallback?q=[QUERY]
+GET https://api.chiffon.day/api/v1/song/search?q=[QUERY]
+GET https://api.chiffon.day/api/v1/song/search/fallback?q=[QUERY]
 
 GraphQL
 
-MAIN /api/v1/song/graphql
-GraphiQL /graphiql
+MAIN https://api.chiffon.day/api/v1/song/graphql
+GraphiQL https://api.chiffon.day/graphiql
 ```
 
 query can be artist name, song name, romanji for both song name & artist
