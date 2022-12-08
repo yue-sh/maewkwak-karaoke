@@ -12,6 +12,7 @@
     "start": "solid-start start"
   },
   "dependencies": {
+    "@karaoke/utils": "workspace:0.0.0",
     "@solidjs/meta": "^0.28.0",
     "@solidjs/router": "^0.5.0",
     "instantsearch.js": "^4.49.1",
