@@ -46,6 +46,8 @@ the url query params are required and you can get from the wechat qr code
 
 ```bash
 As of now macos & ios only works with safari browser because of the CORS problem
+
+For windows, we still also got the CORS problem. You can try to use non chromium browser such as firefox but we're unsure if it's gonna work
 ```
 
 ## Disclaimer
