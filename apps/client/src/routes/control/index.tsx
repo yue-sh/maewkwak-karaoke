@@ -77,14 +77,14 @@ export default function Home() {
                 colorClass="bg-green-200 hover:bg-green-300 text-green-500 border-green-300"
                 icon={<BiRegularSkipNext size={32} />}
                 title="เพลงต่อไป"
-                onClick={() => controlPayload('playcontrol', '3')}
+                onClick={() => controlPayload('danmu0', '3')}
               />
             </div>
             <div class="grid grid-cols-2 gap-2">
-              <EmojiButton>👏</EmojiButton>
-              <EmojiButton>❤️</EmojiButton>
-              <EmojiButton>👍</EmojiButton>
-              <EmojiButton>😡</EmojiButton>
+              <EmojiButton onClick={() => controlPayload('danmu0', '4')}>🌹</EmojiButton>
+              <EmojiButton onClick={() => controlPayload('danmu0', '1')}>❤️</EmojiButton>
+              <EmojiButton onClick={() => controlPayload('danmu0', '3')}>💣</EmojiButton>
+              <EmojiButton onClick={() => controlPayload('danmu0', '2')}>😘</EmojiButton>
             </div>
           </div>
         </div>
