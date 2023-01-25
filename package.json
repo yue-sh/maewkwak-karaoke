@@ -11,6 +11,7 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "dotenv -- turbo run dev --parallel",
     "dev:client": "dotenv -- turbo run dev --filter=\"./apps/client\"",
+    "dev:client-next": "dotenv -- turbo run dev --filter=\"./apps/client-next\"",
     "dev:client:fallback": "dotenv -- turbo run dev --filter=\"./apps/client-fallback\"",
     "dev:server": "dotenv -- turbo run dev --filter=\"./apps/server\"",
     "build": "dotenv -- turbo run build",

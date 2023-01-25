@@ -13,7 +13,6 @@ module.exports = {
   extends: [
     'prettier',
     'eslint:recommended',
-    'plugin:solid/typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/eslint-recommended'
   ],
