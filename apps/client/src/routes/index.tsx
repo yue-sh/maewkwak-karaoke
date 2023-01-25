@@ -7,6 +7,7 @@ import {
   BiSolidMusic,
   BiSolidPlaylist
 } from 'solid-icons/bi'
+import { A, Link } from 'solid-start'
 import { CTAButton } from '~/components/CTAButton'
 import { SongItem } from '~/components/SongItem'
 import { MobileLayout } from '~/layouts/MobileLayout'
@@ -23,24 +24,30 @@ export default function Home() {
             </h1>
             🎉
           </div>
-          <CTAButton
-            title="ค้นหาชื่อเพลง"
-            subtitle="ค้นหาชื่อเพลงง่ายๆด้วยชื่อเพลง"
-            boxClass="bg-red-500 hover:bg-red-600 col-span-2"
-            icon={<BiSolidMusic size={48} />}
-          />
-          <CTAButton
-            title="ควบคุม"
-            subtitle="เปลี่ยนโทรศัพท์ให้เป็นรีโมท"
-            boxClass="bg-blue-500 hover:bg-blue-600"
-            icon={<BiRegularJoystickAlt size={48} />}
-          />
+          <A href="/songs">
+            <CTAButton
+              title="ค้นหาชื่อเพลง"
+              subtitle="ค้นหาชื่อเพลงง่ายๆด้วยชื่อเพลง"
+              boxClass="bg-red-500 hover:bg-red-600 col-span-2"
+              icon={<BiSolidMusic size={48} />}
+            />
+          </A>
+          <A href="/control">
+            <CTAButton
+              title="ควบคุม"
+              subtitle="เปลี่ยนโทรศัพท์ให้เป็นรีโมท"
+              boxClass="bg-blue-500 hover:bg-blue-600"
+              icon={<BiRegularJoystickAlt size={48} />}
+            />
+          </A>
+          <A href="/queues">
           <CTAButton
             title="จัดการคิว"
             subtitle="จัดการคิวเพลงได้ง่ายๆ"
             boxClass="bg-green-500 hover:bg-green-600"
             icon={<BiSolidPlaylist size={48} />}
           />
+          </A>
           {/* <div class="col-span-2">
             <p class="text-gray-500 mt-4 mb-2">เพลงยอดนิยม</p>
             <div class="space-y-2">
@@ -53,6 +60,6 @@ export default function Home() {
           </div> */}
         </div>
       </div>
-    </MobileLayout>
+    </MobileLayout >
   )
 }
