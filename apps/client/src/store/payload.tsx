@@ -9,7 +9,7 @@ function createPayload() {
   const payload = () => {
     if (!getPayload()) {
       console.log('NO PAYLOAD!')
-      window.location.href = '154.212.139.137:3000'
+      //  window.location.href = 'https://karaoke.chiffon.day'
     }
     return getPayload()
   }
