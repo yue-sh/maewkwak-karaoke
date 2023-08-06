@@ -10,9 +10,9 @@ export default function App() {
       apiKey: 'xyz',
       nodes: [
         {
-          host: 'typesense.chiffon.day',
-          port: 443,
-          protocol: 'https'
+          host: '154.212.139.137',
+          port: 8108,
+          protocol: 'http'
         }
       ],
       cacheSearchResultsForSeconds: 2 * 60
